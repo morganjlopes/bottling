@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="css/bootstrap.css" />
+  <link rel="stylesheet" href="css/styles.css" />
+
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+	<title></title>
+</head>
+<body>
+
+<h1 class="text-center">Bottling Conversion</h1>
+
+<div class="container">
+	<div class="conversion_wrapper center">
+		<label for="volume_input">Brewing Volume</label>
+		<div class="input-group">
+		  <input type="email" class="form-control" id="volume_input" placeholder="Enter email">
+		  <span class="input-group-addon">gallons</span>
+		</div>
+
+		<div id="calculation_total">
+			<div class="row">
+				<div class="col-xs-12">
+					<h3 class="text-center"><span id="volume_in_ounces"></span> fl oz</h3>
+					<hr>
+				</div>
+				<div class="col-sm-4">
+					<span id="full_growler_count"></span> large growlers
+				</div>
+				<div class="col-sm-4">
+					<span id="half_growler_count"></span> half growlers
+				</div>
+				<div class="col-sm-4">
+					<span id="bottle_count"></span> bottles
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<script type="text/javascript">
+	$("#calculation_total").hide();
+	$('#volume_input').keyup(function(){
+		volume_value = $('#volume_input').val();
+
+		if (volume_value > 0) {
+			$("#calculation_total").slideDown();
+			// Gallons to Ounces
+			fluid_ounces = volume_value * 128.00;
+			$('#volume_in_ounces').html(fluid_ounces);
+
+			// Full Growler Count
+			full_growler_count = (fluid_ounces / 64.00);
+			$('#full_growler_count').html(full_growler_count.toFixed(1));
+
+			// Half Growler Count
+			half_growler_count = (fluid_ounces / 32.00);
+			$('#half_growler_count').html(half_growler_count.toFixed(1));
+
+			// 12 oz Bottle Count
+			bottle_count = (fluid_ounces / 12.00);
+			$('#bottle_count').html(bottle_count.toFixed(1));
+		} else {
+			$("#calculation_total").slideUp();
+		}
+	});
+</script>
+
+</body>
+</html>
