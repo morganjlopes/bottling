@@ -1,7 +1,3 @@
-section {
-  padding: 40px 0px;
-}
-
 h1 {
   text-transform: uppercase;
 }
@@ -19,8 +15,13 @@ h1 {
   -webkit-font-smoothing: antialiased;
 }
 
+a {
+  color: #F48200;
+}
+
 a:hover, a:active, a:visited, a:focus {
   text-decoration: none;
+  color: #F48200;
 }
 
 .container {
@@ -33,6 +34,15 @@ a:hover, a:active, a:visited, a:focus {
 
 .text-white {
   color: white;
+}
+
+.pad {
+  padding: 40px;
+}
+
+.form-control:focus {
+  box-shadow: 0px 0px 5px #F48200;
+  border: 0px;
 }
 
 .form-control {
@@ -52,32 +62,23 @@ a:hover, a:active, a:visited, a:focus {
   position: fixed;
 }
 
-.narrow_wrapper {
-  max-width: 500px;
-}
-
 .center {
   margin-left: auto;
   margin-right: auto;
 }
 
 #opening_section {
-  background: url(../images/bottles.png) top center repeat-x fixed;
-  background-size: auto 500px;
-  min-height: 350px;
-}
-
-#volume_input_section {
-  background: #1e5799; /* Old browsers */
-  background: -moz-linear-gradient(-45deg,  #1e5799 0%, #49a1e5 100%); /* FF3.6+ */
-  background: -webkit-gradient(linear, left top, right bottom, color-stop(0%,#1e5799), color-stop(100%,#49a1e5)); /* Chrome,Safari4+ */
-  background: -webkit-linear-gradient(-45deg,  #1e5799 0%,#49a1e5 100%); /* Chrome10+,Safari5.1+ */
-  background: -o-linear-gradient(-45deg,  #1e5799 0%,#49a1e5 100%); /* Opera 11.10+ */
-  background: -ms-linear-gradient(-45deg,  #1e5799 0%,#49a1e5 100%); /* IE10+ */
-  background: linear-gradient(135deg,  #1e5799 0%,#49a1e5 100%); /* W3C */
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1e5799', endColorstr='#49a1e5',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
-  border-top: 2px solid #666;
-  border-bottom: 2px solid #666;
+  background: #f9c667; /* Old browsers */
+  background: -moz-linear-gradient(-45deg,  #f9c667 0%, #f48200 100%); /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, right bottom, color-stop(0%,#f9c667), color-stop(100%,#f48200)); /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(-45deg,  #f9c667 0%,#f48200 100%); /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(-45deg,  #f9c667 0%,#f48200 100%); /* Opera 11.10+ */
+  background: -ms-linear-gradient(-45deg,  #f9c667 0%,#f48200 100%); /* IE10+ */
+  background: linear-gradient(135deg,  #f9c667 0%,#f48200 100%); /* W3C */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f9c667', endColorstr='#f48200',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+  color: white;
+  padding: 20px;
+  border-bottom: 3px solid #CA8F3E;
 }
 
 #volume_output_section {
@@ -91,20 +92,17 @@ a:hover, a:active, a:visited, a:focus {
 }
 
 #output_wrapper {
-  border: 2px solid #666; 
+  
 }
 
 #calculation_wrapper {
   display: block;
-  padding: 50px 24px 24px;
   max-width: 600px;
   margin-left: auto;
   margin-right: auto;
 }
 
 #conversion_wrapper {
-  background-color: #E2E2E2;
-  padding: 30px;
 }
 
 footer {
@@ -114,6 +112,11 @@ footer {
   color: #777;
   text-align: center;
   border-top: 1px solid #E5E5E5;
+}
+
+footer {
+  background-image: url("../images/bottles.png") center bottom;
+  background-position: 100px auto;
 }
 
 .table th {

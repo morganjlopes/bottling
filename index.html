@@ -27,112 +27,116 @@
 <body>
 
 <section id="opening_section">
-	<div class="fixed">
-		<div class="container">
-			<h1 class="text-center">It's Bottling Day!</h1>
-			<p class="lead text-center">Let's make sure you have enough glassware.</p>
-		</div>
-	</div>
+	<h1 class="text-center">It's Bottling Day!</h1>
+	<p class="lead text-center">Let's make sure you have enough glassware.</p>
 </section>
 
-<section id="volume_input_section">
-	<div class="container">
-		<h2 class="text-white">Brewed Volume</h2>
-		<div class="row">
-			<div class="col-sm-8">
-			<p class="lead text-white">Enter the amount of beer you're preparing to bottle and we'll let you know how much glassware you need.</p>
-			</div>
-			<div class="col-sm-4">
-				<div class="input-group">
-				  <input type="email" class="form-control" id="volume_input" value="5">
-				  <span class="input-group-addon">gallons</span>
+<div class="container-fluid">
+	<div class="row">
+
+		<div class="col-md-6">
+			<section id="volume_input_section">
+				<div class="pad">
+					<h2 class="">Brewed Volume</h2>
+					<p class="lead">Enter the amount of beer you're preparing to bottle and we'll let you know how much glassware you need.</p>
+					<div class="input-group">
+					  <input type="email" class="form-control" id="volume_input" value="5">
+					  <span class="input-group-addon">gallons</span>
+					</div>
+					<span id="errmsg"></span>
 				</div>
-				<span id="errmsg"></span>
-			</div>
-		</div>
-	</div>
-</section>
+			</section>
+		</div><!-- end column -->
 
-
-<section id="volume_output_section">
-	<div class="container">
-		<div id="output_wrapper">
-			<div id="calculation_total">
-				
-				<div id="conversion_wrapper">
-					<div class="container container_narrow">
-						<div class="row">
-							<div class="col-sm-6 text-center">
-								<h3><span id="volume_in_ounces"></span> fl oz</h3>
-							</div>
-							<div class="col-sm-6 text-center">
-								<h3><span id="volume_in_liters"></span> liters</h3>
+		<div class="col-md-6">
+			<section id="volume_output_section">
+				<div id="output_wrapper" class="pad">
+					<div id="conversion_wrapper" class="">
+						<h2 class="">Conversion</h2>
+						<p class="lead">Your brewed volume converted to fluid ounces, pints, and liters.<br>Take your pick.</p>
+						<div class="">
+							<div class="row">
+								<div class="col-sm-4 text-center">
+									<h3><span id="volume_in_ounces"></span> fl oz</h3>
+								</div>
+								<div class="col-sm-4 text-center">
+									<h3><span id="volume_in_pints"></span> pints</h3>
+								</div>
+								<div class="col-sm-4 text-center">
+									<h3><span id="volume_in_liters"></span> liters</h3>
+								</div>
 							</div>
 						</div>
 					</div>
+
+					<hr>
+
+					<div id="calculation_total" class="">
+						<h2 class="">Bottles</h2>
+						<p class="lead">Choose your glassware. Make sure you're prepared for left over ounces.</p>
+						<div id="calculation_wrapper">
+							<table class="table">
+								<tr>
+									<th>
+										Container Type<br>
+										<span class="text-muted"><em>Fluid Ounces</em></span>
+									</th>
+									<th class="text-right">
+										Quantity Needed<br>
+										<span class="text-muted"><em>Left Over Ounces</em></span>
+									</th>
+								</tr>
+								<tr>
+									<td>
+										<h3>Large Growlers</h3>
+										<p class="text-muted"><em>(64 fl oz)</em></p>
+									</td>
+									<td class="text-right">
+										<h3><span id="full_growler_count"></span></h3>
+										<p><em><small><span id="full_growler_extra_ounces"></span></small></em></p>
+									</td>
+								</tr>
+
+								<tr>
+									<td class="text-center" colspan="2"><h4><em>or</em></h4></td>
+								</tr>
+								
+								<tr>
+									<td>
+										<h3>Medium Growlers</h3>
+										<p class="text-muted"><em>(32 fl oz)</em></p>
+									</td>
+									<td class="text-right">
+										<h3><span id="half_growler_count"></span></h3>
+										<p><em><small><span id="half_growler_extra_ounces"></span></small></em></p>
+									</td>
+								</tr>
+
+								<tr>
+									<td class="text-center" colspan="2"><h4><em>or</em></h4></td>
+								</tr>
+								
+								<tr>
+									<td>
+										<h3>Standard Bottles</h3>
+										<p class="text-muted"><em>(12 fl oz)</em></p>
+									</td>
+									<td class="text-right">
+										<h3><span id="bottle_count"></span></h3>
+										<p><em><small><span id="bottle_extra_ounces"></span></small></em></p>
+									</td>
+								</tr>
+							</table>
+						</div>
+					</div>
 				</div>
-
-				<div id="calculation_wrapper">
-					<table class="table">
-						<tr>
-							<th>
-								Container<br>
-								<span class="text-muted"><em>Fluid Ounces</em></span>
-							</th>
-							<th class="text-right">
-								Quantity Needed<br>
-								<span class="text-muted"><em>Extra Fluid Ounces</em></span>
-							</th>
-						</tr>
-						<tr>
-							<td>
-								<h3>Large Growlers</h3>
-								<p class="text-muted"><em>(64 fl oz)</em></p>
-							</td>
-							<td class="text-right">
-								<h3><span id="full_growler_count"></span></h3>
-								<p><em><small><span id="full_growler_extra_ounces"></span></small></em></p>
-							</td>
-						</tr>
-
-						<tr>
-							<td class="text-center" colspan="2"><h4><em>or</em></h4></td>
-						</tr>
-						
-						<tr>
-							<td>
-								<h3>Medium Growlers</h3>
-								<p class="text-muted"><em>(32 fl oz)</em></p>
-							</td>
-							<td class="text-right">
-								<h3><span id="half_growler_count"></span></h3>
-								<p><em><small><span id="half_growler_extra_ounces"></span></small></em></p>
-							</td>
-						</tr>
-
-						<tr>
-							<td class="text-center" colspan="2"><h4><em>or</em></h4></td>
-						</tr>
-						
-						<tr>
-							<td>
-								<h3>Standard Bottles</h3>
-								<p class="text-muted"><em>(12 fl oz)</em></p>
-							</td>
-							<td class="text-right">
-								<h3><span id="bottle_count"></span></h3>
-								<p><em><small><span id="bottle_extra_ounces"></span></small></em></p>
-							</td>
-						</tr>
-					</table>
-				</div>
-			</div>
-		</div>
-	</div>
-</section>
+			</section>
+		</div><!-- end column -->
+	</div><!-- end row -->
+</div>
 
 <footer>
-	<div class="container">
+	<div class="">
 		<p>Created by <a href="http://morganjlopes.com" target="_blank">Morgan J Lopes</a></p>
 		<ul class="list-inline">
 			<li>
@@ -149,27 +153,22 @@
 </footer>
 
 <script type="text/javascript">
-	$("#calculation_total").hide();
-
-	// Bring input section to top of the page to reveal calculations
-  $('#volume_input').on( 'focus', function() {
-		$('html, body').animate({
-      scrollTop: $("#volume_input_section").offset().top
-    });
-	});
+	$("#output_wrapper").hide();
 
 	$('#volume_input').keyup(function(){
 		volume_value = $('#volume_input').val();
 
 		if (volume_value > 0) {
-			$("#calculation_total").slideDown();
+			$("#output_wrapper").slideDown();
 			
 			// Conversions
 			volume_as_fluid_ounces = (volume_value * 128.00);
+			volume_as_pints = (volume_value * 8);
 			volume_as_liters = (volume_value * 3.79);
 
 			// Display Conversions
 			$('#volume_in_ounces').html(volume_as_fluid_ounces.toFixed(2));
+			$('#volume_in_pints').html(volume_as_pints.toFixed(2));
 			$('#volume_in_liters').html(volume_as_liters.toFixed(2));
 
 			// Full Growler Count
@@ -180,7 +179,7 @@
 
 			$('#full_growler_count').html(full_growler_count.toFixed(0));
 			if (full_growler_extra_in_oz > 0) {
-				$('#full_growler_extra_ounces').html(full_growler_extra_in_oz.toFixed(0) + " Extra Ounces");
+				$('#full_growler_extra_ounces').html(full_growler_extra_in_oz.toFixed(0) + " left over ounces");
 			}
 
 			// Half Growler Count
@@ -191,7 +190,7 @@
 
 			$('#half_growler_count').html(half_growler_count.toFixed(0));
 			if (half_growler_extra_in_oz > 0) {
-				$('#half_growler_extra_ounces').html(half_growler_extra_in_oz.toFixed(0) + " Extra Ounces");
+				$('#half_growler_extra_ounces').html(half_growler_extra_in_oz.toFixed(0) + " left over ounces");
 			}
 
 			// 12 oz Bottle Count
@@ -202,10 +201,10 @@
 
 			$('#bottle_count').html(bottle_count.toFixed(0));
 			if (bottle_extra_in_oz > 0) {
-				$('#bottle_extra_ounces').html(bottle_extra_in_oz.toFixed(0) + " Extra Ounces");
+				$('#bottle_extra_ounces').html(bottle_extra_in_oz.toFixed(0) + " left over ounces");
 			}
 		} else {
-			$("#calculation_total").slideUp();
+			$("#output_wrapper").slideUp();
 		}
 	}).keyup();
 
