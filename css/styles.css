@@ -1,3 +1,40 @@
+section {
+  padding: 40px 0px;
+}
+
+h1 {
+  text-transform: uppercase;
+}
+
+@font-face {
+  font-family: 'Socicon Webfont';
+
+  src: url('../fonts/socicon-webfont.eot');
+  src: url('../fonts/socicon-webfont.eot?#iefix') format('embedded-opentype'), url('../fonts/socicon-webfont.woff') format('woff'), url('../fonts/socicon-webfont.ttf') format('truetype'), url('../fonts/socicon-webfont.svg#glyphicons_halflingsregular') format('svg');
+}
+.social-icon {
+  font-family: 'Socicon Webfont';
+  text-decoration: none;
+  font-size: 20px;
+  -webkit-font-smoothing: antialiased;
+}
+
+a:hover, a:active, a:visited, a:focus {
+  text-decoration: none;
+}
+
+.container {
+  max-width: 900px;
+}
+
+.container_narrow {
+  max-width: 600px;
+}
+
+.text-white {
+  color: white;
+}
+
 .form-control {
   padding: 30px 20px;
   font-size: 18px;
@@ -10,11 +47,93 @@
   }
 }
 
-.conversion_wrapper {
+.fixed {
+  width: 100%;
+  position: fixed;
+}
+
+.narrow_wrapper {
   max-width: 500px;
 }
 
 .center {
   margin-left: auto;
   margin-right: auto;
+}
+
+#opening_section {
+  background: url(../images/bottles.png) top center repeat-x fixed;
+  background-size: auto 500px;
+  min-height: 350px;
+}
+
+#volume_input_section {
+  background: #1e5799; /* Old browsers */
+  background: -moz-linear-gradient(-45deg,  #1e5799 0%, #49a1e5 100%); /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, right bottom, color-stop(0%,#1e5799), color-stop(100%,#49a1e5)); /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(-45deg,  #1e5799 0%,#49a1e5 100%); /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(-45deg,  #1e5799 0%,#49a1e5 100%); /* Opera 11.10+ */
+  background: -ms-linear-gradient(-45deg,  #1e5799 0%,#49a1e5 100%); /* IE10+ */
+  background: linear-gradient(135deg,  #1e5799 0%,#49a1e5 100%); /* W3C */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1e5799', endColorstr='#49a1e5',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+  border-top: 2px solid #666;
+  border-bottom: 2px solid #666;
+}
+
+#volume_output_section {
+  background-color: #FFF;
+}
+
+#volume_input_section,
+#volume_output_section {
+  position: relative;
+  z-index: 999;
+}
+
+#output_wrapper {
+  border: 2px solid #666; 
+}
+
+#calculation_wrapper {
+  display: block;
+  padding: 50px 24px 24px;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#conversion_wrapper {
+  background-color: #E2E2E2;
+  padding: 30px;
+}
+
+footer {
+  padding-top: 40px;
+  padding-bottom: 40px;
+  margin-top: 100px;
+  color: #777;
+  text-align: center;
+  border-top: 1px solid #E5E5E5;
+}
+
+.table th {
+}
+
+.table td h3 {
+  margin-bottom: 5px;
+  margin-top: 5px;
+  font-size: 20px;
+}
+
+.table td h4 {
+  margin: 0px;
+}
+
+.table > thead > tr > th,
+.table > tbody > tr > th,
+.table > tfoot > tr > th,
+.table > thead > tr > td,
+.table > tbody > tr > td,
+.table > tfoot > tr > td {
+  vertical-align: middle;
 }

@@ -3,70 +3,240 @@
 <head>
 	<meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>It's Bottling Day :: Prepare your glassware</title>
+  <meta name="description" content="It's bottling day. Let's make sure you have enough glassware." />
+  <meta property="og:title" content="It's Bottling Day :: Prepare your glassware"/>
+  <meta property="og:type" content="article"/>
+  <meta property="og:url" content="http://morganjlopes.com/bottling" />
+  <meta property="og:image" content="http://morganjlopes.com/bottling/images/bottles.png"/>
+  <meta property="og:site_name" content="It's Bottling Day"/>
+  <meta property="og:description" content="It's time to bottle some beer. Make sure you have enough glassware sanitized and ready so you don't waste a drop."/>
+
+  <link rel="shortcut icon" href="images/favicon.jpg" />
+  <link rel="apple-touch-icon" href="images/apple-touch-icon.jpg" />
+
   <link rel="stylesheet" href="css/bootstrap.css" />
   <link rel="stylesheet" href="css/styles.css" />
 
   <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-	<title></title>
+
+  <script src="js/jquery.scrollIntoView.js"></script>
+
 </head>
 <body>
 
-<h1 class="text-center">Bottling Conversion</h1>
-
-<div class="container">
-	<div class="conversion_wrapper center">
-		<label for="volume_input">Brewing Volume</label>
-		<div class="input-group">
-		  <input type="email" class="form-control" id="volume_input" placeholder="Enter email">
-		  <span class="input-group-addon">gallons</span>
+<section id="opening_section">
+	<div class="fixed">
+		<div class="container">
+			<h1 class="text-center">It's Bottling Day!</h1>
+			<p class="lead text-center">Let's make sure you have enough glassware.</p>
 		</div>
+	</div>
+</section>
 
-		<div id="calculation_total">
-			<div class="row">
-				<div class="col-xs-12">
-					<h3 class="text-center"><span id="volume_in_ounces"></span> fl oz</h3>
-					<hr>
+<section id="volume_input_section">
+	<div class="container">
+		<h2 class="text-white">Brewed Volume</h2>
+		<div class="row">
+			<div class="col-sm-8">
+			<p class="lead text-white">Enter the amount of beer you're preparing to bottle and we'll let you know how much glassware you need.</p>
+			</div>
+			<div class="col-sm-4">
+				<div class="input-group">
+				  <input type="email" class="form-control" id="volume_input" value="5">
+				  <span class="input-group-addon">gallons</span>
 				</div>
-				<div class="col-sm-4">
-					<span id="full_growler_count"></span> large growlers
+				<span id="errmsg"></span>
+			</div>
+		</div>
+	</div>
+</section>
+
+
+<section id="volume_output_section">
+	<div class="container">
+		<div id="output_wrapper">
+			<div id="calculation_total">
+				
+				<div id="conversion_wrapper">
+					<div class="container container_narrow">
+						<div class="row">
+							<div class="col-sm-6 text-center">
+								<h3><span id="volume_in_ounces"></span> fl oz</h3>
+							</div>
+							<div class="col-sm-6 text-center">
+								<h3><span id="volume_in_liters"></span> liters</h3>
+							</div>
+						</div>
+					</div>
 				</div>
-				<div class="col-sm-4">
-					<span id="half_growler_count"></span> half growlers
-				</div>
-				<div class="col-sm-4">
-					<span id="bottle_count"></span> bottles
+
+				<div id="calculation_wrapper">
+					<table class="table">
+						<tr>
+							<th>
+								Container<br>
+								<span class="text-muted"><em>Fluid Ounces</em></span>
+							</th>
+							<th class="text-right">
+								Quantity Needed<br>
+								<span class="text-muted"><em>Extra Fluid Ounces</em></span>
+							</th>
+						</tr>
+						<tr>
+							<td>
+								<h3>Large Growlers</h3>
+								<p class="text-muted"><em>(64 fl oz)</em></p>
+							</td>
+							<td class="text-right">
+								<h3><span id="full_growler_count"></span></h3>
+								<p><em><small><span id="full_growler_extra_ounces"></span></small></em></p>
+							</td>
+						</tr>
+
+						<tr>
+							<td class="text-center" colspan="2"><h4><em>or</em></h4></td>
+						</tr>
+						
+						<tr>
+							<td>
+								<h3>Medium Growlers</h3>
+								<p class="text-muted"><em>(32 fl oz)</em></p>
+							</td>
+							<td class="text-right">
+								<h3><span id="half_growler_count"></span></h3>
+								<p><em><small><span id="half_growler_extra_ounces"></span></small></em></p>
+							</td>
+						</tr>
+
+						<tr>
+							<td class="text-center" colspan="2"><h4><em>or</em></h4></td>
+						</tr>
+						
+						<tr>
+							<td>
+								<h3>Standard Bottles</h3>
+								<p class="text-muted"><em>(12 fl oz)</em></p>
+							</td>
+							<td class="text-right">
+								<h3><span id="bottle_count"></span></h3>
+								<p><em><small><span id="bottle_extra_ounces"></span></small></em></p>
+							</td>
+						</tr>
+					</table>
 				</div>
 			</div>
 		</div>
 	</div>
-</div>
+</section>
+
+<footer>
+	<div class="container">
+		<p>Created by <a href="http://morganjlopes.com" target="_blank">Morgan J Lopes</a></p>
+		<ul class="list-inline">
+			<li>
+				<a href="https://twitter.com/MorganJLopes" target="_blank"><div class="social-icon">a</div></a>
+			</li>
+			<li>
+				<a href="https://instagram.com/MorganJLopes" target="_blank"><div class="social-icon">x</div></a>
+			</li>
+			<li>
+				<a href="https://github.com/MorganJLopes" target="_blank"><div class="social-icon">Q</div></a>
+			</li>
+		</ul>
+	</div>
+</footer>
 
 <script type="text/javascript">
 	$("#calculation_total").hide();
+
+	// Bring input section to top of the page to reveal calculations
+  $('#volume_input').on( 'focus', function() {
+		$('html, body').animate({
+      scrollTop: $("#volume_input_section").offset().top
+    });
+	});
+
 	$('#volume_input').keyup(function(){
 		volume_value = $('#volume_input').val();
 
 		if (volume_value > 0) {
 			$("#calculation_total").slideDown();
-			// Gallons to Ounces
-			fluid_ounces = volume_value * 128.00;
-			$('#volume_in_ounces').html(fluid_ounces);
+			
+			// Conversions
+			volume_as_fluid_ounces = (volume_value * 128.00);
+			volume_as_liters = (volume_value * 3.79);
+
+			// Display Conversions
+			$('#volume_in_ounces').html(volume_as_fluid_ounces.toFixed(2));
+			$('#volume_in_liters').html(volume_as_liters.toFixed(2));
 
 			// Full Growler Count
-			full_growler_count = (fluid_ounces / 64.00);
-			$('#full_growler_count').html(full_growler_count.toFixed(1));
+			full_growler_count = (volume_as_fluid_ounces / 64.00);
+			full_growler_whole = Math.floor(full_growler_count);
+			full_growler_extra = (full_growler_count - full_growler_whole);
+			full_growler_extra_in_oz = full_growler_extra * 64.00;
+
+			$('#full_growler_count').html(full_growler_count.toFixed(0));
+			if (full_growler_extra_in_oz > 0) {
+				$('#full_growler_extra_ounces').html(full_growler_extra_in_oz.toFixed(0) + " Extra Ounces");
+			}
 
 			// Half Growler Count
-			half_growler_count = (fluid_ounces / 32.00);
-			$('#half_growler_count').html(half_growler_count.toFixed(1));
+			half_growler_count = (volume_as_fluid_ounces / 32.00);
+			half_growler_whole = Math.floor(half_growler_count);
+			half_growler_extra = (half_growler_count - half_growler_whole);
+			half_growler_extra_in_oz = half_growler_extra * 32.00;
+
+			$('#half_growler_count').html(half_growler_count.toFixed(0));
+			if (half_growler_extra_in_oz > 0) {
+				$('#half_growler_extra_ounces').html(half_growler_extra_in_oz.toFixed(0) + " Extra Ounces");
+			}
 
 			// 12 oz Bottle Count
-			bottle_count = (fluid_ounces / 12.00);
-			$('#bottle_count').html(bottle_count.toFixed(1));
+			bottle_count = (volume_as_fluid_ounces / 12.00);
+			bottle_whole = Math.floor(bottle_count);
+			bottle_extra = (bottle_count - bottle_whole);
+			bottle_extra_in_oz = bottle_extra * 12.00;
+
+			$('#bottle_count').html(bottle_count.toFixed(0));
+			if (bottle_extra_in_oz > 0) {
+				$('#bottle_extra_ounces').html(bottle_extra_in_oz.toFixed(0) + " Extra Ounces");
+			}
 		} else {
 			$("#calculation_total").slideUp();
 		}
-	});
+	}).keyup();
+
+	$(function () {
+    $("input[id*='volume_input']").keydown(function (event) {
+      if (event.shiftKey == true) {
+          event.preventDefault();
+      }
+
+      if ((event.keyCode >= 48 && event.keyCode <= 57) || (event.keyCode >= 96 && event.keyCode <= 105) || event.keyCode == 8 || event.keyCode == 9 || event.keyCode == 37 || event.keyCode == 39 || event.keyCode == 46 || event.keyCode == 190) {
+
+      } else {
+          event.preventDefault();
+      }
+      
+      if($(this).val().indexOf('.') !== -1 && event.keyCode == 190)
+          event.preventDefault();
+
+    });
+  });
+</script>
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-56206936-2', 'auto');
+  ga('send', 'pageview');
+
 </script>
 
 </body>
